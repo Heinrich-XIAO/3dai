@@ -7,6 +7,7 @@
         "@clerk/clerk-react": "^5.49.0",
         "@convex-dev/react-query": "0.1.0",
         "@modelcontextprotocol/sdk": "^1.17.0",
+        "@openrouter/sdk": "^0.4.0",
         "@t3-oss/env-core": "^0.13.8",
         "@tailwindcss/vite": "^4.0.6",
         "@tanstack/ai": "latest",
@@ -265,6 +266,8 @@
     "@oozcitak/url": ["@oozcitak/url@3.0.0", "", { "dependencies": { "@oozcitak/infra": "^2.0.2", "@oozcitak/util": "^10.0.0" } }, "sha512-ZKfET8Ak1wsLAiLWNfFkZc/BraDccuTJKR6svTYc7sVjbR+Iu0vtXdiDMY4o6jaFl5TW2TlS7jbLl4VovtAJWQ=="],
 
     "@oozcitak/util": ["@oozcitak/util@10.0.0", "", {}, "sha512-hAX0pT/73190NLqBPPWSdBVGtbY6VOhWYK3qqHqtXQ1gK7kS2yz4+ivsN07hpJ6I3aeMtKP6J6npsEKOAzuTLA=="],
+
+    "@openrouter/sdk": ["@openrouter/sdk@0.4.0", "", { "dependencies": { "zod": "^3.25.0 || ^4.0.0" } }, "sha512-FKT6fT3LzIJA2UEXj9WVnNT74i5aeyz25YvjxfGMxu/lIuInpzkYkd7c7rZGQfMxXzq5d9syglrA4AVv08q0eQ=="],
 
     "@oxc-minify/binding-android-arm-eabi": ["@oxc-minify/binding-android-arm-eabi@0.110.0", "", { "os": "android", "cpu": "arm" }, "sha512-43fMTO8/5bMlqfOiNSZNKUzIqeLIYuB9Hr1Ohyf58B1wU11S2dPGibTXOGNaWsfgHy99eeZ1bSgeIHy/fEYqbw=="],
 

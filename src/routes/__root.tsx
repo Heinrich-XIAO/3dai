@@ -1,16 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
-
-import Header from '../components/Header'
 
 import ClerkProvider from '../integrations/clerk/provider'
-
-import ConvexProvider from '../integrations/convex/provider'
-
-import AiDevtools from '../lib/ai-devtools'
-
-import StoreDevtools from '../lib/demo-store-devtools'
 
 import appCss from '../styles.css?url'
 
@@ -46,25 +36,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <ClerkProvider>
-          <ConvexProvider>
-            <Header />
-            {children}
-            <TanStackDevtools
-              config={{
-                position: 'bottom-right',
-              }}
-              plugins={[
-                {
-                  name: 'Tanstack Router',
-                  render: <TanStackRouterDevtoolsPanel />,
-                },
-                AiDevtools,
-                StoreDevtools,
-              ]}
-            />
-          </ConvexProvider>
-        </ClerkProvider>
+        <ClerkProvider>{children}</ClerkProvider>
         <Scripts />
       </body>
     </html>
