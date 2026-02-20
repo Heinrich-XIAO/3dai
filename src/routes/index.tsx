@@ -1,15 +1,12 @@
-import { Textarea } from '@/components/ui/textarea'
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from '@clerk/clerk-react'
+import { useShooAuth } from '@shoojs/react'
 import { createFileRoute } from '@tanstack/react-router'
+import { Textarea } from '@/components/ui/textarea'
 
 export const Route = createFileRoute('/')({ component: App })
 
 function App() {
+  const { identity, loading, signIn, clearIdentity } = useShooAuth()
+
   const sendMessage = (textarea: HTMLTextAreaElement) => {
     const message = textarea.value.trim()
     if (!message) return
@@ -30,19 +27,22 @@ function App() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            <SignedOut>
-              <SignInButton>
-                <button
-                  type="button"
-                  className="rounded-full border border-slate-700 px-4 py-2 text-sm font-medium text-white transition hover:border-slate-500 hover:bg-slate-900"
-                >
-                  Sign in
-                </button>
-              </SignInButton>
-            </SignedOut>
+            {loading ? null : identity.userId ? (
+              <button
+                onClick={() => clearIdentity()}
+                className="rounded-full border border-slate-700 px-4 py-2 text-sm font-medium text-white transition hover:border-slate-500 hover:bg-slate-900"
+              >
+                Sign out
+              </button>
+            ) : (
+              <button
+                onClick={() => signIn()}
+                type="button"
+                className="rounded-full border border-slate-700 px-4 py-2 text-sm font-medium text-white transition hover:border-slate-500 hover:bg-slate-900"
+              >
+                Sign in
+              </button>
+            )}
           </div>
         </div>
       </nav>

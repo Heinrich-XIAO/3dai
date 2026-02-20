@@ -1,7 +1,5 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 
-import ClerkProvider from '../integrations/clerk/provider'
-
 import appCss from '../styles.css?url'
 
 export const Route = createRootRoute({
@@ -36,7 +34,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <ClerkProvider>{children}</ClerkProvider>
+        {children}
         <Scripts />
       </body>
     </html>
